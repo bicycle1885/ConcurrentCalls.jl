@@ -1,11 +1,7 @@
 # ConcurrentCalls.jl
 
-[![Build Status](https://travis-ci.org/bicycle1885/ConcurrentCalls.jl.svg?branch=master)](https://travis-ci.org/bicycle1885/ConcurrentCalls.jl)
-
-[![Coverage Status](https://coveralls.io/repos/bicycle1885/ConcurrentCalls.jl/badge.svg?branch=master&service=github)](https://coveralls.io/github/bicycle1885/ConcurrentCalls.jl?branch=master)
-
-[![codecov.io](http://codecov.io/github/bicycle1885/ConcurrentCalls.jl/coverage.svg?branch=master)](http://codecov.io/github/bicycle1885/ConcurrentCalls.jl?branch=master)
-
+[![TravisCI Status][travisci-img]][travisci-url]
+[![codecov.io][codecov-img]][codecov-url]
 
 ## Usage
 
@@ -77,8 +73,8 @@ end
 
 In a benchmark, it took 24.4 seconds to compress 3,000 files in serial
 execution. But when we used four workers (`-p4`), it only took 5.7 seconds; the
-speedup rate is >100%, this would be because workers compressed data while
-waiting I/O operations and tasks allocated to each worker were multiplexed.
+speedup rate is >100%, this would be because workers compressed data using the
+external command and tasks allocated to each worker were multiplexed.
 
 ## Example: counting words
 
@@ -101,3 +97,7 @@ In a benchmark, it took 7.0 seconds to process 3,000 files in serial.  The same
 task took 2.7 seconds with four workers.
 
 [closures]: https://docs.julialang.org/en/stable/devdocs/functions/#Closures-1
+[travisci-img]: https://travis-ci.org/bicycle1885/ConcurrentCalls.jl.svg?branch=master
+[travisci-url]: https://travis-ci.org/bicycle1885/ConcurrentCalls.jl
+[codecov-img]: http://codecov.io/github/bicycle1885/ConcurrentCalls.jl/coverage.svg?branch=master
+[codecov-url]: http://codecov.io/github/bicycle1885/ConcurrentCalls.jl?branch=master
